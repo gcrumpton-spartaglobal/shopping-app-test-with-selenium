@@ -37,3 +37,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Chromedriver ###
+src/test/resources/chromedriver.exe
+src/test/resources/LICENSE.chromedriver
