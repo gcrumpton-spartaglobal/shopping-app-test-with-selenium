@@ -23,4 +23,17 @@ public class ShoppingAppPomTest extends TestSetup {
         MatcherAssert.assertThat(website.getCurrentUrl(),
                 Matchers.containsStringIgnoringCase("https://react-shopping-cart-67954.firebaseapp.com/"));
     }
+
+    @Test
+    @DisplayName("Check that we can open the cart")
+    void clickOnCart_OpensCart() {
+        website = getWebsite(BASE_URL);
+
+        website.getHomePage().clickCartButton();
+
+        String emptyCartMsg = website.getHomePage().getEmptyCartText();
+
+        MatcherAssert.assertThat(emptyCartMsg,
+                Matchers.containsStringIgnoringCase("Add some products in the cart"));
+    }
 }
